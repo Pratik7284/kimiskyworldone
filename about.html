@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Firm - SkyWorld One</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2332;
+            --gold: #c9a96e;
+            --charcoal: #2d3748;
+            --light-gray: #f7fafc;
+        }
+        
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        
+        .about-hero {
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.8), rgba(201, 169, 110, 0.3)), 
+                        url('https://kimi-web-img.moonshot.cn/img/cdn.sanity.io/45fe6905963f137435d1166cf4e54b7dc661ad08.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .value-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .dropdown.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .timeline-item {
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--gold);
+        }
+        
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--navy), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="font-display text-2xl font-bold text-gray-900">SkyWorld One</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Home</a>
+                        <a href="consulting.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
+                        <div class="relative">
+                            <button id="tradingDropdown" class="nav-link text-gray-700 hover:text-yellow-600 font-medium flex items-center">
+                                Trading
+                                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="tradingMenu" class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
+                                <a href="trading.html#tobacco" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco Products</a>
+                                <a href="trading.html#metals" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals & Coal</a>
+                            </div>
+                        </div>
+                        <a href="about.html" class="nav-link text-gray-900 hover:text-yellow-600 font-medium">The Firm</a>
+                        <a href="contact.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-700 hover:text-yellow-600">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-yellow-600">Home</a>
+                <a href="consulting.html" class="block px-3 py-2 text-gray-700 hover:text-yellow-600">Consulting</a>
+                <a href="trading.html" class="block px-3 py-2 text-gray-700 hover:text-yellow-600">Trading</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-900 hover:text-yellow-600">The Firm</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-yellow-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero min-h-screen flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">
+                    The Firm
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto font-light">
+                    SkyWorld One is a diversified company built on the principles of clarity, reliability, and disciplined execution. 
+                    Established to bridge strategic thinking with commercial capability, we serve clients and partners in key global markets.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-8">Company Overview</h2>
+                    <div class="space-y-6 text-lg text-gray-600">
+                        <p>
+                            SkyWorld One combines analytical depth with pragmatic delivery. We value integrity over scale, 
+                            long-term partnerships over short-term activity, and measurable results over visibility.
+                        </p>
+                        <p>
+                            The firm continues to grow through relationships built on trust, transparency, and professional conduct. 
+                            Our approach is grounded in diligence, operational discipline, and discretion.
+                        </p>
+                        <p>
+                            Together, our consulting and trading practices reflect a single objective: to enable organizations 
+                            and counterparties to operate with focus, confidence, and precision.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.commercialinteriordesign.com/b8fb105110d38b998984c9473b8e07efe34710db.jpg" 
+                         alt="Executive Office" 
+                         class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Values</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The principles that guide our approach to every engagement and transaction
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="value-card bg-white rounded-2xl p-8 shadow-lg text-center reveal">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Clarity</h3>
+                    <p class="text-gray-600">
+                        Clear communication, transparent processes, and unambiguous expectations in every interaction
+                    </p>
+                </div>
+                
+                <div class="value-card bg-white rounded-2xl p-8 shadow-lg text-center reveal">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Reliability</h3>
+                    <p class="text-gray-600">
+                        Consistent delivery, dependable partnerships, and proven track record across all practices
+                    </p>
+                </div>
+                
+                <div class="value-card bg-white rounded-2xl p-8 shadow-lg text-center reveal">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Discipline</h3>
+                    <p class="text-gray-600">
+                        Structured approaches, rigorous processes, and methodical execution in all endeavors
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operations -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Operations</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Global reach with local expertise across key international markets
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="space-y-8">
+                        <div class="timeline-item pl-8">
+                            <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Consulting Practice</h3>
+                            <p class="text-gray-600 text-lg mb-4">
+                                Strategic advisory and execution support for organizations seeking clarity, capability, and performance improvement.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                    <div class="counter text-3xl font-bold text-yellow-600" data-target="50">0</div>
+                                    <div class="text-sm text-gray-600">+ Successful Engagements</div>
+                                </div>
+                                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                    <div class="counter text-3xl font-bold text-yellow-600" data-target="15">0</div>
+                                    <div class="text-sm text-gray-600">+ Countries Served</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item pl-8">
+                            <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Trading Division</h3>
+                            <p class="text-gray-600 text-lg mb-4">
+                                Global supply and distribution through trusted international networks with operational discipline.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                    <div class="counter text-3xl font-bold text-yellow-600" data-target="25">0</div>
+                                    <div class="text-sm text-gray-600">+ Trading Partners</div>
+                                </div>
+                                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                    <div class="counter text-3xl font-bold text-yellow-600" data-target="4">0</div>
+                                    <div class="text-sm text-gray-600">Key Regions</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal">
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="font-display text-2xl font-bold text-gray-900 mb-6">Global Presence</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-yellow-600 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">Middle East</span>
+                                </div>
+                                <span class="text-gray-600">Strategic Hub</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-yellow-600 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">Africa</span>
+                                </div>
+                                <span class="text-gray-600">Emerging Markets</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-yellow-600 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">Asia</span>
+                                </div>
+                                <span class="text-gray-600">Manufacturing Base</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-yellow-600 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">Europe</span>
+                                </div>
+                                <span class="text-gray-600">Premium Markets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <div class="bg-white rounded-2xl p-12 shadow-lg">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-8">Our Mission</h2>
+                    <blockquote class="text-2xl md:text-3xl font-light text-gray-600 italic mb-8">
+                        "To enable organizations and counterparties to operate with focus, confidence, and precision through strategic clarity and commercial capability."
+                    </blockquote>
+                    <div class="grid md:grid-cols-3 gap-8 mt-12">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-gray-900 mb-2">Global Reach</h3>
+                            <p class="text-gray-600 text-sm">International presence with local expertise</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-gray-900 mb-2">Professional Excellence</h3>
+                            <p class="text-gray-600 text-sm">High standards in every engagement</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-gray-900 mb-2">Trusted Partnerships</h3>
+                            <p class="text-gray-600 text-sm">Long-term relationships built on reliability</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get in Touch -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Get in Touch</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    For enquiries or to discuss a potential engagement, please contact us. 
+                    Personal and without obligation – we welcome the opportunity to explore how SkyWorld One can support your objectives.
+                </p>
+                <a href="contact.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    Contact Us
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="font-display text-2xl font-bold text-white mb-4">SkyWorld One</h3>
+                <p class="text-gray-400 mb-6">A World of Capability</p>
+                <div class="flex justify-center space-x-8 mb-8">
+                    <a href="index.html" class="hover:text-yellow-600 transition-colors">Home</a>
+                    <a href="consulting.html" class="hover:text-yellow-600 transition-colors">Consulting</a>
+                    <a href="trading.html" class="hover:text-yellow-600 transition-colors">Trading</a>
+                    <a href="about.html" class="hover:text-yellow-600 transition-colors">The Firm</a>
+                    <a href="contact.html" class="hover:text-yellow-600 transition-colors">Contact</a>
+                </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-500 text-sm">
+                        © 2024 SkyWorld One. All rights reserved. | 
+                        <a href="#" class="hover:text-yellow-600">Privacy Policy</a> | 
+                        <a href="#" class="hover:text-yellow-600">Compliance</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Counter animation for statistics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + '+';
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + '+';
+                    }
+                }, 16);
+            });
+        }
+        
+        // Initialize counter animation when section is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const operationsSection = document.querySelector('.counter').closest('section');
+            if (operationsSection) {
+                observer.observe(operationsSection);
+            }
+        });
+    </script>
+</body>
+</html>
