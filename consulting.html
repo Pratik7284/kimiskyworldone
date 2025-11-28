@@ -19,12 +19,16 @@
         .font-body { font-family: 'Inter', sans-serif; }
         
         .consulting-hero {
-            background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(201, 169, 110, 0.4)), 
-                        url('https://w0.peakpx.com/wallpaper/372/113/HD-wallpaper-handshake-blue-background-handshake-from-lines-polygon-handshake-art-closing-a-deal-business-blue-background-handshake-concepts.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
+    min-height: auto;
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(201, 169, 110, 0.4)), 
+                url('https://w0.peakpx.com/wallpaper/372/113/HD-wallpaper-handshake-blue-background-handshake-from-lines-polygon-handshake-art-closing-a-deal-business-blue-background-handshake-concepts.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed;  REMOVE THIS */
+}
+
+
         
         .service-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -122,14 +126,14 @@
                         <a href="consulting.html" class="nav-link text-gray-900 hover:text-yellow-600 font-medium">Consulting</a>
                         <div class="relative">
                             <button id="tradingDropdown" class="nav-link text-gray-700 hover:text-yellow-600 font-medium flex items-center">
-                                Trading
+                                <a href="trading.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
                                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
                             <div id="tradingMenu" class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
-                                <a href="trading.html#tobacco" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco Products</a>
-                                <a href="trading.html#metals" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals & Coal</a>
+                                <a href="tabacco.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco Products</a>
+                                <a href="metal.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals & Coal</a>
                             </div>
                         </div>
                         <a href="about.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">The Firm</a>
@@ -433,23 +437,7 @@
     </section>
 
     <!-- Get in Touch -->
-    <section class="py-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <div class="reveal">
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Get in Touch</h2>
-                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                    If you would like to discuss a consulting engagement, we welcome direct enquiries. 
-                    Personal and without obligation – let's explore how we can support your objectives.
-                </p>
-                <a href="contact.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    Discuss Your Needs
-                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">

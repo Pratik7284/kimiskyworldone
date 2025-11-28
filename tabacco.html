@@ -10,13 +10,14 @@
     <style>
         :root {
             --navy: #1a2332;
-            --gold: #c2a570;
+            --gold: #c9a96e;
             --charcoal: #2d3748;
             --light-gray: #f7fafc;
         }
         
         .font-display { font-family: 'Playfair Display', serif; }
         .font-body { font-family: 'Inter', sans-serif; }
+        
         .trading-hero {
             background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(201, 169, 110, 0.4)), 
                         url('https://plus.unsplash.com/premium_photo-1661964050170-b9e54345217d?fm=jpg.jpg');
@@ -24,7 +25,6 @@
             background-position: center;
             background-attachment: fixed;
         }
-     
         
         .division-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -128,13 +128,13 @@
                         <a href="consulting.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
                         <div class="relative">
                             <button id="tradingDropdown" class="nav-link text-gray-900 hover:text-yellow-600 font-medium flex items-center">
-                                <a href="trading.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium"></a>Trading</a>
+                                <a href="trading.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
                                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
                             <div id="tradingMenu" class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
-                                <a href="tobacco.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco Products</a>
+                                <a href="tabacco.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco Products</a>
                                 <a href="metal.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals & Coal</a>
                             </div>
                         </div>
@@ -166,28 +166,92 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="trading-hero min-h-screen flex items-center justify-center relative">
-        <div class="absolute inset-0 bg-gradient-to-br from-gray-900/30 to-transparent"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <div class="reveal">
-                <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">
-                    Trading
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto font-light">
-                    SkyWorld One facilitates the supply and movement of goods across key international markets. 
-                    We work with a network of manufacturers, suppliers, and distribution partners to coordinate sourcing, logistics, and delivery with clarity and consistency.
+    
+    <!-- Trading Divisions -->
+    <section id="divisions" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Trading Divisions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Two specialized divisions serving global markets with established manufacturer and distributor relationships
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="tabacco.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                        Tabacco Product 
-                    </a>
-                    <a href="metal.html" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                        Metals & Coal
+            </div>
+
+                
+            <div id="tobacco" class="division-card bg-white rounded-2xl p-8 shadow-lg reveal">
+                <div class="mb-6">
+                    <img src="https://images.verifiedmarketresearch.com/assets/7-best-tobacco-packaging-companies.png" 
+                         alt="Tobacco Products" 
+                         class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h3 class="font-display text-3xl font-bold text-gray-900 mb-4">Tobacco Products</h3>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Supply and distribution of cigarettes across multiple markets and formats, supported by established manufacturer and distributor relationships.
+                    </p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">Formats Available</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Nano Slim</span>
+                            </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Super Slim</span>
+                            </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Queen Size</span>
+                            </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">King Size</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">Filter Types</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Standard Filter</span>
+                            </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Hollow Filter</span>
+                            </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Recessed Filter</span>
+                            </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Custom Variants</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">Capsule Options</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Single Capsule</span>
+                            </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Dual Capsule</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <p class="text-gray-600 mb-4">
+                        <strong>Packaging & Presentation:</strong> Formats and finishing styles aligned to market positioning and regulatory requirements.
+                    </p>
+                    <a href="contact.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        Enquire About Tobacco Products
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+
     <!-- Trade Assurance -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -286,6 +350,8 @@
         </div>
     </section>
 
+    <!-- Get in Touch -->
+  
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
