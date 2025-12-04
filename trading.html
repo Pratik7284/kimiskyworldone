@@ -9,109 +9,312 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #1a2332;
-            --gold: #c2a570;
-            --charcoal: #2d3748;
-            --light-gray: #f7fafc;
+          --navy: #1a2332;
+          --gold:#C58A00;
+          --charcoal: #2d3748;
+          --light-gray: #f7fafc;
         }
-        
+      
         .font-display { font-family: 'Playfair Display', serif; }
         .font-body { font-family: 'Inter', sans-serif; }
+      
+        /* ---------- CONSULTING HERO (compact banner) ---------- */
         .trading-hero {
-            background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(201, 169, 110, 0.4)), 
-                        url('https://plus.unsplash.com/premium_photo-1661964050170-b9e54345217d?fm=jpg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+          position: relative;
+          padding: 90px ;            /* reduced vertical space */
+          max-height: 500px;          /* prevents it growing too tall */
+          overflow: hidden;
+          background:
+            linear-gradient(135deg, rgba(10,12,20,0.54), rgba(20,30,45,0.28)),
+            url('https://plus.unsplash.com/premium_photo-1661964050170-b9e54345217d?fm=jpg.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          /* background-attachment removed to avoid full-screen behaviour */
+          box-sizing: border-box;
         }
-     
-        
-        .division-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
+      
+        /* smaller strict variant toggle with class "force-smaller" if needed */
+        .trading-hero.force-smaller {
+          max-height: 420px;
+          padding: 44px 0;
         }
-        
-        .division-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      
+        /* subtle overlay so text remains readable */
+        .trading-hero::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.35));
+          z-index: 0;
+          pointer-events: none;
         }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
+      
+        /* wrapper */
+        .trading-hero-inner {
+          position: relative;
+          z-index: 2; /* above overlay */
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 0 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 1px;
         }
-        
+      
+        /* compact + responsive text */
+        .trading-hero-text {
+          max-width: 900px;
+          margin: 0 auto;
+          text-align: center;
+          color: #fff;
+        }
+      
+        /* Heading - balanced sizes */
+        .trading-hero-text h1 {
+          font-family: 'Playfair Display', serif;
+          font-weight: 600;
+          font-size: 2.2rem;      /* comfortable base size */
+          line-height: 1.02;
+          margin-bottom: 10px;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+        }
+      
+        /* Slightly larger on wider screens but not overwhelming */
+        @media (min-width: 900px) {
+          .trading-hero-text h1 { font-size: 2.8rem; }
+        }
+        @media (min-width: 1400px) {
+          .trading-hero-text h1 { font-size: 3.2rem; }
+        }
+      
+        /* Paragraph - readable width & spacing */
+        .trading-hero-text p {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.02rem;
+          line-height: 1.6;
+          max-width: 760px;
+          margin: 0 auto 18px;
+          color: rgba(255,255,255,0.93);
+          font-weight: 300;
+        }
+      
+        /* Buttons styles: consistent & balanced */
+        .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .hero-cta .btn {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 0.95rem;
+          border-radius: 10px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: transform .18s ease, filter .18s ease;
+        }
+      
+        /* Use same color for both if desired */
+        .btn-primary, .btn-outline {
+          background: var(--gold);
+          color: #111827;
+          border: none;
+        }
+        .btn-primary:hover, .btn-outline:hover { transform: translateY(-3px); filter: brightness(.95); }
+      
+        /* If you prefer second button as outline, comment above and uncomment below:
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.16); }
+        .btn-outline:hover { background: rgba(255,255,255,0.06); color: #fff; }
+        */
+      
+        /* ---------- Other existing styles (kept / tuned) ---------- */
+        .service-card {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-style: preserve-3d;
+        }
+        .service-card:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+      
+        .nav-link { position: relative; transition: color 0.3s ease; }
         .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.3s ease;
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: var(--gold);
+          transition: width 0.3s ease;
         }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
+        .nav-link:hover::after { width: 100%; }
+      
         .dropdown {
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: all 0.3s ease;
+          pointer-events: none;
         }
-        
-        .dropdown.active {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: all;
+        .dropdown.active { opacity: 1; transform: translateY(0); pointer-events: all; }
+      
+        .reveal { opacity: 0; transform: translateY(30px); }
+        .reveal.active { opacity: 1; transform: translateY(0); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+      
+        .process-step { position: relative; }
+        .process-step::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: -2rem;
+          width: 2rem;
+          height: 2px;
+          background: var(--gold);
+          transform: translateY(-50%);
         }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
+        .process-step:last-child::before { display: none; }
+      
+        .gradient-text {
+          background: linear-gradient(135deg, var(--navy), var(--gold));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      
+        /* ---------- Responsive tweaks ---------- */
+        @media (max-width: 900px) {
+          .trading-hero { padding: 34px 0; max-height: none; }
+          .trading-hero-text h1 { font-size: 1.8rem; }
+          .trading-hero-text p { font-size: 0.95rem; line-height: 1.45; max-width: 100%; padding: 0 8px; }
+          .hero-cta .btn { padding: 8px 14px; font-size: 0.9rem; }
         }
-        
-        .tab-button {
-            transition: all 0.3s ease;
-        }
-        
-        .tab-button.active {
-            background: var(--gold);
-            color: white;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .spec-card {
-            transition: all 0.3s ease;
-        }
-        
-        .spec-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+
+        .division-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; } .division-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); } .nav-link { position: relative; transition: color 0.3s ease; } .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s ease; } .nav-link:hover::after { width: 100%; } .dropdown { opacity: 0; transform: translateY(-10px); transition: all 0.3s ease; pointer-events: none; } .dropdown.active { opacity: 1; transform: translateY(0); pointer-events: all; } .reveal { opacity: 0; transform: translateY(30px); } .reveal.active { opacity: 1; transform: translateY(0); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); } .tab-button { transition: all 0.3s ease; } .tab-button.active { background: var(--gold); color: white; } .tab-content { display: none; } .tab-content.active { display: block; animation: fadeIn 0.5s ease-in-out; } @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } .spec-card { transition: all 0.3s ease; } .spec-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+      /* Commercial Engagements section styling */
+/* ---- boxed feature panel (centered, two-column features) ---- */
+.commercial-box {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 34px;
+  background: #f7fafc;           /* very light panel */
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(16,24,40,0.04);
+  text-align: center;
+  color: #0f1724;
+}
+
+.commercial-box .box-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.commercial-box .box-intro {
+  max-width: 820px;
+  margin: 0 auto 22px;
+  color: #475569;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* feature grid */
+.commercial-box .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 28px;
+  margin-top: 6px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.feature-item .icon {
+  min-width: 28px;
+  min-height: 28px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.feature-item .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.feature-item .desc {
+  font-family: 'Inter', sans-serif;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+/* responsive: stack on small screens */
+@media (max-width: 768px) {
+  .commercial-box { padding: 28px 18px; }
+  .commercial-box .box-heading { font-size: 1.35rem; }
+  .commercial-box .feature-grid { grid-template-columns: 1fr; gap: 12px 12px; }
+}
+
+/* Primary Button Style */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* Gold Primary Button */
+.btn-primary {
+  background: var(--gold);
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background:#C58A00; /* slightly darker gold */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+/* FIX: Dropdown should not push navbar down */
+nav .dropdown {
+  position: absolute !important;
+  top: 100%;
+  left: 0;
+  width: 180px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+/* When active, show dropdown without moving layout */
+nav .dropdown.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+      </style>
 </head>
 <body class="font-body text-gray-800 bg-white">
     <!-- Navigation -->
@@ -166,7 +369,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="trading-hero min-h-screen flex items-center justify-center relative">
+    <section class="trading-hero" aria-label="Trading hero">
         <div class="absolute inset-0 bg-gradient-to-br from-gray-900/30 to-transparent"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <div class="reveal">
@@ -176,12 +379,14 @@
                 <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto font-light">
                     SkyWorld One facilitates the supply and movement of goods across key international markets. 
                     We work with a network of manufacturers, suppliers, and distribution partners to coordinate sourcing, logistics, and delivery with clarity and consistency.
+
+
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="tabacco.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                        Tabacco Product 
+                        Tabacco Products 
                     </a>
-                    <a href="metal.html" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    <a href="metal.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                         Metals & Coal
                     </a>
                 </div>
@@ -285,6 +490,54 @@
             </div>
         </div>
     </section>
+    <!-- START: Commercial Engagements (new client section) -->
+<!-- START: boxed feature panel (Discretion / key points) -->
+<section class="commercial-box" aria-label="Discretion in Commercial Handling">
+    <div class="box-heading">Commercial Engagements</div>
+  
+    <div class="box-intro">
+        We support commission-based and referral structures for qualified counterparties where aligned to market opportunities and commercial interests. Engagements are executed on case-by-case basis with clear terms, fee models, and contractual agreements.
+    </div>
+  
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="icon" aria-hidden="true">
+          <!-- check icon -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+            <h3 class="font-display text-lg font-semibold text-gray-900 mb-3">Referral & Commission Models</h3>
+          <div class="desc">To explore referral or commission arrangements, please get in touch. We structure engagements to align incentives and provide transparent terms.</div>
+          <ul class="text-gray-700 space-y-2 list-disc pl-5">
+            <li>Case-by-case assessments</li>
+            <li>Clear contractual terms</li>
+            <li>Market-aligned fee models</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="feature-item">
+        <div class="icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="title">How It Works</div>
+          <ol class="text-gray-700 list-decimal pl-5 space-y-2">
+            <li>Initial enquiry and qualification</li>
+            <li>Commercial proposal & term sheet</li>
+            <li>Engagement execution and reporting</li>
+          </ol>
+          <div class="mt-4">
+            <a href="contact.html" class="btn btn-primary inline-block mt-2">Contact us to discuss</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: boxed feature panel -->
+ 
+  
 
 
     <!-- Footer -->

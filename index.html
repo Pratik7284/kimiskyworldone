@@ -19,13 +19,14 @@
         }
         
         /* Global Font Settings */
-        body {
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Playfair Display', 'Times New Roman', serif;
-        }
+        body, p, li, a, span {
+    font-family: 'Inter', sans-serif !important;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif !important;
+}
+
         
         .font-display { font-family: 'Playfair Display', serif; }
         .font-body { font-family: 'Inter', sans-serif; }
@@ -145,6 +146,26 @@
                 font-size: 0.9rem;
             }
         }
+        /* Spacing for hero section */
+.hero-left h1 {
+    margin-bottom: 18px; /* space between heading and subheading */
+}
+
+.hero-subheading {
+    margin-bottom: 16px; /* space between subheading and body text */
+    line-height: 1.55;
+}
+
+.hero-body {
+    margin-bottom: 28px; /* space between body text and button */
+    line-height: 1.6;
+}
+
+/* Optional: Slightly increase readability */
+.hero-left p {
+    max-width: 650px;
+}
+
         
         .practice-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -265,6 +286,30 @@
             0%, 100% { box-shadow: 0 0 20px rgba(255, 214, 138, 0.925); }
             50% { box-shadow: 0 0 40px rgba(236, 198, 127, 0.753); }
         }
+        /* FIX: Dropdown should not push navbar down */
+nav .dropdown {
+  position: absolute !important;
+  top: 100%;
+  left: 0;
+  width: 180px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+/* When active, show dropdown without moving layout */
+nav .dropdown.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
     </style>
 </head>
 <body class="font-body text-gray-800 bg-white">
@@ -326,9 +371,9 @@
             <div class="hero-left">
                 <h1>A World of Capability</h1>
                 
-                <h2 class="hero-subheading">
+                <p class="hero-subheading">
                     SkyWorld One brings strategy, operational capability, and global trading networks together under one firm.
-                </h2>
+                </p>
                 
                 <p class="hero-body">
                     Our consulting practice helps leaders shape direction and performance, while our trading operations connect markets with consistency and trust. We enable organizations to move decisively, scale intelligently, and grow sustainably.
@@ -344,7 +389,7 @@
             
             <div class="hero-right">
                 <div class="hero-image-card">
-                    <img src="https://cdn.pixabay.com/photo/2024/02/04/14/38/earth-8552339_1280.jpg" alt="Global network" class="hero-globe" />
+                    <img src="resources\Stock-Connected-Connectivity-Globe-Supply-Chain-Technology-375x214.jpg" alt="Global network" class="hero-globe" />
                 </div>
             </div>
         </div>

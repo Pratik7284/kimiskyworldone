@@ -8,23 +8,188 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+       
         :root {
-            --navy: #1a2332;
-            --gold: #c9a96e;
-            --charcoal: #2d3748;
-            --light-gray: #f7fafc;
+          --navy: #1a2332;
+          --gold: #c9a96e;
+          --charcoal: #2d3748;
+          --light-gray: #f7fafc;
         }
-        
+      
         .font-display { font-family: 'Playfair Display', serif; }
         .font-body { font-family: 'Inter', sans-serif; }
-        
+      
+        /* ---------- CONSULTING HERO (compact banner) ---------- */
         .about-hero {
-            background: linear-gradient(135deg, rgba(26, 35, 50, 0.8), rgba(201, 169, 110, 0.3)), 
-                        url('https://static.vecteezy.com/system/resources/thumbnails/048/057/775/small/professional-business-meeting-with-executives-in-formal-suits-corporate-discussion-teamwork-and-leadership-in-a-modern-office-setting-photo.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+          position: relative;
+          padding: 100px ;            /* reduced vertical space */
+          max-height: 600px;          /* prevents it growing too tall */
+          overflow: hidden;
+          background:
+            linear-gradient(135deg, rgba(10,12,20,0.54), rgba(20,30,45,0.28)),
+            url('https://static.vecteezy.com/system/resources/thumbnails/048/057/775/small/professional-business-meeting-with-executives-in-formal-suits-corporate-discussion-teamwork-and-leadership-in-a-modern-office-setting-photo.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          /* background-attachment removed to avoid full-screen behaviour */
+          box-sizing: border-box;
         }
+      
+        /* smaller strict variant toggle with class "force-smaller" if needed */
+        .about-hero.force-smaller {
+          max-height: 420px;
+          padding: 44px 0;
+        }
+      
+        /* subtle overlay so text remains readable */
+        .about-hero::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.35));
+          z-index: 0;
+          pointer-events: none;
+        }
+      
+        /* wrapper */
+        .about-hero-inner {
+          position: relative;
+          z-index: 2; /* above overlay */
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 0 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 1px;
+        }
+      
+        /* compact + responsive text */
+        .about-hero-text {
+          max-width: 900px;
+          margin: 0 auto;
+          text-align: center;
+          color: #fff;
+        }
+      
+        /* Heading - balanced sizes */
+        .about-hero-text h1 {
+          font-family: 'Playfair Display', serif;
+          font-weight: 600;
+          font-size: 2.2rem;      /* comfortable base size */
+          line-height: 1.02;
+          margin-bottom: 10px;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+        }
+      
+        /* Slightly larger on wider screens but not overwhelming */
+        @media (min-width: 900px) {
+          .about-hero-text h1 { font-size: 2.8rem; }
+        }
+        @media (min-width: 1400px) {
+          .about-hero-text h1 { font-size: 3.2rem; }
+        }
+      
+        /* Paragraph - readable width & spacing */
+        .about-hero-text p {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.02rem;
+          line-height: 1.6;
+          max-width: 760px;
+          margin: 0 auto 18px;
+          color: rgba(255,255,255,0.93);
+          font-weight: 300;
+        }
+      
+        /* Buttons styles: consistent & balanced */
+        .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .hero-cta .btn {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 0.95rem;
+          border-radius: 10px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: transform .18s ease, filter .18s ease;
+        }
+      
+        /* Use same color for both if desired */
+        .btn-primary, .btn-outline {
+          background: var(--gold);
+          color: #111827;
+          border: none;
+        }
+        .btn-primary:hover, .btn-outline:hover { transform: translateY(-3px); filter: brightness(.95); }
+      
+        /* If you prefer second button as outline, comment above and uncomment below:
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.16); }
+        .btn-outline:hover { background: rgba(255,255,255,0.06); color: #fff; }
+        */
+      
+        /* ---------- Other existing styles (kept / tuned) ---------- */
+        .service-card {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-style: preserve-3d;
+        }
+        .service-card:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+      
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: var(--gold);
+          transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+      
+        .dropdown {
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: all 0.3s ease;
+          pointer-events: none;
+        }
+        .dropdown.active { opacity: 1; transform: translateY(0); pointer-events: all; }
+      
+        .reveal { opacity: 0; transform: translateY(30px); }
+        .reveal.active { opacity: 1; transform: translateY(0); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+      
+        .process-step { position: relative; }
+        .process-step::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: -2rem;
+          width: 2rem;
+          height: 2px;
+          background: var(--gold);
+          transform: translateY(-50%);
+        }
+        .process-step:last-child::before { display: none; }
+      
+        .gradient-text {
+          background: linear-gradient(135deg, var(--navy), var(--gold));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      
+        /* ---------- Responsive tweaks ---------- */
+        @media (max-width: 900px) {
+          .about-hero { padding: 34px 0; max-height: none; }
+          .about-hero-text h1 { font-size: 1.8rem; }
+          .about-hero-text p { font-size: 0.95rem; line-height: 1.45; max-width: 100%; padding: 0 8px; }
+          .hero-cta .btn { padding: 8px 14px; font-size: 0.9rem; }
+        }
+      
+    
         
         .value-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -110,6 +275,28 @@
             font-weight: bold;
             color: var(--gold);
         }
+        nav .dropdown {
+  position: absolute !important;
+  top: 100%;
+  left: 0;
+  width: 180px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+/* When active, show dropdown without moving layout */
+nav .dropdown.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
     </style>
 </head>
 <body class="font-body text-gray-800 bg-white">
@@ -165,7 +352,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="about-hero min-h-screen flex items-center justify-center relative">
+    <section class="about-hero" aria-label="About hero">
         <div class="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-transparent"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <div class="reveal">
@@ -203,7 +390,7 @@
                 </div>
                 
                 <div class="reveal">
-                    <img src="https://thumbs.dreamstime.com/b/business-overview-outlook-goal-plan-conceptss-teamwork-working-marketing-strategy-business-overview-outlook-198437612.jpg" 
+                    <img src="https://thumbs.dreamstime.com/b/business-professionals-brainstorming-modern-office-panoramic-cityscape-view-night-cool-tones-soft-interior-lighting-402111250.jpg" 
                          alt="Executive Office" 
                          class="rounded-2xl shadow-2xl w-full h-96 object-cover">
                 </div>
