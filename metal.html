@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading - SkyWorld One</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --navy: #1a2332;
@@ -14,33 +17,38 @@
             --charcoal: #2d3748;
             --light-gray: #f7fafc;
         }
-        
-        .font-display { font-family: 'Playfair Display', serif; }
-        .font-body { font-family: 'Inter', sans-serif; }
-        
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .trading-hero {
-            background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(201, 169, 110, 0.4)), 
-                        url('https://plus.unsplash.com/premium_photo-1661964050170-b9e54345217d?fm=jpg.jpg');
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(201, 169, 110, 0.4)),
+                url('https://plus.unsplash.com/premium_photo-1661964050170-b9e54345217d?fm=jpg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        
+
         .division-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transform-style: preserve-3d;
         }
-        
+
         .division-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        
+
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -51,123 +59,145 @@
             background: var(--gold);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .dropdown {
             opacity: 0;
             transform: translateY(-10px);
             transition: all 0.3s ease;
             pointer-events: none;
         }
-        
+
         .dropdown.active {
             opacity: 1;
             transform: translateY(0);
             pointer-events: all;
         }
-        
+
         .reveal {
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .tab-button {
             transition: all 0.3s ease;
         }
-        
+
         .tab-button.active {
             background: var(--gold);
             color: white;
         }
-        
+
         .tab-content {
             display: none;
         }
-        
+
         .tab-content.active {
             display: block;
             animation: fadeIn 0.5s ease-in-out;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .spec-card {
             transition: all 0.3s ease;
         }
-        
+
         .spec-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
-/* Default height (mobile/tablet) */
-#metals img {
-    height: 190px; /* adjust if needed */
-    object-fit: cover;
-}
 
-/* Desktop — extend height */
-@media (min-width: 1024px) {
-    #metals img {
-        height: 320px !important; /* extended desktop height */
-        object-fit: cover;
-    }
-}
+        /* Default height (mobile/tablet) */
+        #metals img {
+            height: 190px;
+            /* adjust if needed */
+            object-fit: cover;
+        }
 
-
+        /* Desktop — extend height */
+        @media (min-width: 1024px) {
+            #metals img {
+                height: 320px !important;
+                /* extended desktop height */
+                object-fit: cover;
+            }
+        }
     </style>
 </head>
+
 <body class="font-body text-gray-800 bg-white">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <a href="index.html" class="font-display text-2xl font-bold text-gray-900">SkyWorld One</a>
+                    <a href="index.html" class="font-display text-2xl font-bold text-gray-900"></a>
+                    <img src="WhatsApp Image 2025-11-06 at 1.31.53 PM.jpeg" alt="SkyWorld One Logo" class="h-10 w-auto">
                 </div>
-                
+
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="index.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Home</a>
-                        <a href="consulting.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
+                        <a href="consulting.html"
+                            class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
                         <div class="relative">
-                            <button id="tradingDropdown" class="nav-link text-gray-900 hover:text-yellow-600 font-medium flex items-center">
-                                <a href="trading.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
+                            <button id="tradingDropdown"
+                                class="nav-link text-gray-900 hover:text-yellow-600 font-medium flex items-center">
+                                <a href="trading.html"
+                                    class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
                                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
-                            <div id="tradingMenu" class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
-                                <a href="tabacco.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco Products</a>
-                                <a href="metal.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals & Coal</a>
+                            <div id="tradingMenu"
+                                class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
+                                <a href="tabacco.html"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco
+                                    Products</a>
+                                <a href="metal.html"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals
+                                    & Coal</a>
                             </div>
                         </div>
-                        <a href="about.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">The Firm</a>
-                        <a href="contact.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Contact</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">The
+                            Firm</a>
+                        <a href="contact.html"
+                            class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Contact</a>
                     </div>
                 </div>
-                
+
                 <div class="md:hidden">
                     <button id="mobileMenuBtn" class="text-gray-700 hover:text-yellow-600">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
             <div class="px-2 pt-2 pb-3 space-y-1">
@@ -181,101 +211,111 @@
     </nav>
 
     <!-- Hero Section -->
-    
+
     <!-- Trading Divisions -->
     <section id="divisions" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Trading Divisions</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Two specialized divisions serving global markets with established manufacturer and distributor relationships
+                    Two specialized divisions serving global markets with established manufacturer and distributor
+                    relationships
                 </p>
             </div>
 
-                
-                <!-- Metals & Coal -->
-                <div id="metals" class="division-card bg-white rounded-2xl p-8 shadow-lg reveal">
-                    <div class="mb-6">
-                        <img src="https://t4.ftcdn.net/jpg/15/07/57/11/360_F_1507571176_KryeYwtPpA0hOYtiNoOpXv2GGUVXASr5.jpg" 
-                             alt="Metals and Coal" 
-                             class="w-full h-48 object-cover rounded-lg mb-6">
-                        <h3 class="font-display text-3xl font-bold text-gray-900 mb-4">Metals & Coal</h3>
-                        <p class="text-gray-600 text-lg mb-6">
-                            Procurement and trade of metals and coal for industrial and commercial use, with attention to specification, logistics, and inspection standards.
-                        </p>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-semibold text-gray-900 mb-3">Metals We Trade</h4>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="spec-card bg-gray-50 p-3 rounded-lg">
-                                    <span class="text-sm font-medium text-gray-700">Copper</span>
-                                </div>
-                                <div class="spec-card bg-gray-50 p-3 rounded-lg">
-                                    <span class="text-sm font-medium text-gray-700">Steel</span>
-                                </div>
-                                <div class="spec-card bg-gray-50 p-3 rounded-lg">
-                                    <span class="text-sm font-medium text-gray-700">Aluminum</span>
-                                </div>
-                                <div class="spec-card bg-gray-50 p-3 rounded-lg">
-                                    <span class="text-sm font-medium text-gray-700">Nickel</span>
-                                </div>
+
+            <!-- Metals & Coal -->
+            <div id="metals" class="division-card bg-white rounded-2xl p-8 shadow-lg reveal">
+                <div class="mb-6">
+                    <img src="https://t4.ftcdn.net/jpg/15/07/57/11/360_F_1507571176_KryeYwtPpA0hOYtiNoOpXv2GGUVXASr5.jpg"
+                        alt="Metals and Coal" class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h3 class="font-display text-3xl font-bold text-gray-900 mb-4">Metals & Coal</h3>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Procurement and trade of metals and coal for industrial and commercial use, with attention to
+                        specification, logistics, and inspection standards.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">Metals We Trade</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Copper</span>
                             </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold text-gray-900 mb-3">Coal Types</h4>
-                            <div class="space-y-3">
-                                <div class="spec-card bg-gray-50 p-4 rounded-lg">
-                                    <h5 class="font-medium text-gray-900 mb-2">Coking Coal</h5>
-                                    <p class="text-sm text-gray-600">For steel and industrial processing</p>
-                                </div>
-                                <div class="spec-card bg-gray-50 p-4 rounded-lg">
-                                    <h5 class="font-medium text-gray-900 mb-2">Steam Coal</h5>
-                                    <p class="text-sm text-gray-600">For energy generation and industrial heating</p>
-                                </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Steel</span>
                             </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold text-gray-900 mb-3">Quality Assurance</h4>
-                            <div class="space-y-2">
-                                <div class="flex items-center text-gray-700">
-                                    <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    Specifications confirmed per transaction
-                                </div>
-                                <div class="flex items-center text-gray-700">
-                                    <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    Grade requirements aligned to buyer needs
-                                </div>
-                                <div class="flex items-center text-gray-700">
-                                    <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    Calorific values provided on request
-                                </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Aluminum</span>
+                            </div>
+                            <div class="spec-card bg-gray-50 p-3 rounded-lg">
+                                <span class="text-sm font-medium text-gray-700">Nickel</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="mt-8 pt-6 border-t border-gray-200">
-                        <p class="text-gray-600 mb-4">
-                            <strong>Delivery Terms:</strong> FOB, CIF, and CFR options available based on buyer operational requirements.
-                        </p>
-                        <a href="contact.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                            Enquire About Metals & Coal
-                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
+
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">Coal Types</h4>
+                        <div class="space-y-3">
+                            <div class="spec-card bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-gray-900 mb-2">Coking Coal</h5>
+                                <p class="text-sm text-gray-600">For steel and industrial processing</p>
+                            </div>
+                            <div class="spec-card bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-gray-900 mb-2">Steam Coal</h5>
+                                <p class="text-sm text-gray-600">For energy generation and industrial heating</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">Quality Assurance</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Specifications confirmed per transaction
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Grade requirements aligned to buyer needs
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Calorific values provided on request
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <p class="text-gray-600 mb-4">
+                        <strong>Delivery Terms:</strong> FOB, CIF, and CFR options available based on buyer operational
+                        requirements.
+                    </p>
+                    <a href="contact.html"
+                        class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        Enquire About Metals & Coal
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -285,27 +325,32 @@
             <div class="text-center mb-16 reveal">
                 <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Trade Assurance</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    We manage documentation, inspection protocols, and shipment logistics to ensure compliance and reliability across transactions
+                    We manage documentation, inspection protocols, and shipment logistics to ensure compliance and
+                    reliability across transactions
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="text-center reveal">
                     <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
                         </svg>
                     </div>
                     <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Clear Specification Alignment</h3>
                     <p class="text-gray-600">
-                        Detailed product specifications coordinated directly with buyers to ensure exact requirements are met
+                        Detailed product specifications coordinated directly with buyers to ensure exact requirements
+                        are met
                     </p>
                 </div>
-                
+
                 <div class="text-center reveal">
                     <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
                     <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Inspection Protocols</h3>
@@ -313,11 +358,13 @@
                         SGS / BV inspection available where required to verify quality and compliance standards
                     </p>
                 </div>
-                
+
                 <div class="text-center reveal">
                     <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h4a2 2 0 012 2v1m-6 0h8m-9 0v10a2 2 0 002 2h8a2 2 0 002-2V7H7z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h4a2 2 0 012 2v1m-6 0h8m-9 0v10a2 2 0 002 2h8a2 2 0 002-2V7H7z">
+                            </path>
                         </svg>
                     </div>
                     <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Coordinated Logistics</h3>
@@ -326,18 +373,23 @@
                     </p>
                 </div>
             </div>
-            
+
             <div class="mt-16 text-center reveal">
                 <div class="bg-gray-50 rounded-2xl p-8 max-w-4xl mx-auto">
-                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Discretion in Commercial Handling</h3>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Discretion in Commercial Handling
+                    </h3>
                     <p class="text-gray-600 text-lg mb-6">
-                        We work directly with counterparties to maintain clarity of terms, timelines, and expectations throughout the process. 
+                        We work directly with counterparties to maintain clarity of terms, timelines, and expectations
+                        throughout the process.
                         Our approach is grounded in diligence, operational discipline, and discretion.
                     </p>
                     <div class="grid md:grid-cols-2 gap-6 text-left">
                         <div class="flex items-start">
-                            <svg class="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             <div>
                                 <h4 class="font-semibold text-gray-900 mb-1">Direct Counterparty Relationships</h4>
@@ -345,8 +397,11 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <svg class="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             <div>
                                 <h4 class="font-semibold text-gray-900 mb-1">Transparent Terms & Timelines</h4>
@@ -354,8 +409,11 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <svg class="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             <div>
                                 <h4 class="font-semibold text-gray-900 mb-1">Operational Discipline</h4>
@@ -363,8 +421,11 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <svg class="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             <div>
                                 <h4 class="font-semibold text-gray-900 mb-1">Professional Discretion</h4>
@@ -378,7 +439,7 @@
     </section>
 
     <!-- Get in Touch -->
-  
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
@@ -395,8 +456,8 @@
                 </div>
                 <div class="border-t border-gray-800 pt-8">
                     <p class="text-gray-500 text-sm">
-                        © 2024 SkyWorld One. All rights reserved. | 
-                        <a href="#" class="hover:text-yellow-600">Privacy Policy</a> | 
+                        © 2026 SkyWorld One. All rights reserved. |
+                        <a href="#" class="hover:text-yellow-600">Privacy Policy</a> |
                         <a href="#" class="hover:text-yellow-600">Compliance</a>
                     </p>
                 </div>
@@ -406,4 +467,5 @@
 
     <script src="main.js"></script>
 </body>
+
 </html>

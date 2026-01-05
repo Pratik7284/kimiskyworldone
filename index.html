@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyWorld One - A World of Capability</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -17,37 +20,49 @@
             --charcoal: #2d3748;
             --light-gray: #f7fafc;
         }
-        
+
         /* Global Font Settings */
-        body, p, li, a, span {
-    font-family: 'Inter', sans-serif !important;
-}
+        body,
+        p,
+        li,
+        a,
+        span {
+            font-family: 'Inter', sans-serif !important;
+        }
 
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif !important;
-}
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif !important;
+        }
 
-        
-        .font-display { font-family: 'Playfair Display', serif; }
-        .font-body { font-family: 'Inter', sans-serif; }
-        
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+
         /* Ensure hero section uses correct fonts */
         #home h1,
         #home h2,
         #home h3 {
             font-family: 'Playfair Display', serif !important;
         }
-        
+
         #home p {
             font-family: 'Inter', sans-serif !important;
         }
-        
+
         /* Hero Section - Corporate Two-Column Layout */
         .hero {
             padding: 150px 20px 150px;
             background-color: #f8f4ee;
         }
-        
+
         .hero-inner {
             max-width: 1200px;
             margin: 0 auto;
@@ -56,12 +71,12 @@ h1, h2, h3, h4 {
             justify-content: space-between;
             gap: 100px;
         }
-        
+
         .hero-left {
             flex: 1;
             text-align: left;
         }
-        
+
         .hero-left h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -69,7 +84,7 @@ h1, h2, h3, h4 {
             margin-bottom: 12px;
             line-height: 1.2;
         }
-        
+
         .hero-left h2.hero-subheading {
             font-size: 1.1rem;
             font-weight: 500;
@@ -78,7 +93,7 @@ h1, h2, h3, h4 {
             line-height: 1.6;
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        
+
         .hero-body {
             font-size: 0.98rem;
             line-height: 1.7;
@@ -86,106 +101,110 @@ h1, h2, h3, h4 {
             max-width: 520px;
             margin-bottom: 24px;
         }
-        
+
         /* Right side card with globe */
         .hero-right {
             flex: 1;
             display: flex;
             justify-content: center;
         }
-        
+
         .hero-image-card {
             background: #ffffff;
             padding: px;
             border-radius: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
             max-width: 600px;
         }
-        
+
         .hero-globe {
             width: 100%;
             height: auto;
             border-radius: 16px;
             object-fit: cover;
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 968px) {
             .hero-inner {
                 flex-direction: column;
                 gap: 32px;
             }
-            
+
             .hero-left h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-right {
                 width: 100%;
             }
         }
-        
+
         @media (max-width: 640px) {
             .hero {
                 padding: 80px 20px 60px;
             }
-            
+
             .hero-left h1 {
                 font-size: 2rem;
             }
-            
+
             .hero-subheading {
                 font-size: 1rem;
             }
-            
+
             .hero-body {
                 font-size: 0.9rem;
             }
         }
+
         /* Spacing for hero section */
-.hero-left h1 {
-    margin-bottom: 18px; /* space between heading and subheading */
-}
+        .hero-left h1 {
+            margin-bottom: 18px;
+            /* space between heading and subheading */
+        }
 
-.hero-subheading {
-    margin-bottom: 16px; /* space between subheading and body text */
-    line-height: 1.55;
-}
+        .hero-subheading {
+            margin-bottom: 16px;
+            /* space between subheading and body text */
+            line-height: 1.55;
+        }
 
-.hero-body {
-    margin-bottom: 28px; /* space between body text and button */
-    line-height: 1.6;
-}
+        .hero-body {
+            margin-bottom: 28px;
+            /* space between body text and button */
+            line-height: 1.6;
+        }
 
-/* Optional: Slightly increase readability */
-.hero-left p {
-    max-width: 650px;
-}
+        /* Optional: Slightly increase readability */
+        .hero-left p {
+            max-width: 650px;
+        }
 
-        
+
         .practice-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transform-style: preserve-3d;
             display: flex;
             flex-direction: column;
         }
-        
+
         .practice-card:hover {
             transform: translateY(-8px) scale(1.03);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        
+
         .practice-header {
             display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 1rem;
         }
-        
+
         .practice-icon {
             width: 40px;
             height: 40px;
@@ -196,23 +215,23 @@ h1, h2, h3, h4 {
             background-color: #ca8a04;
             flex-shrink: 0;
         }
-        
+
         .practice-icon svg {
             width: 20px;
             height: 20px;
             color: white;
         }
-        
+
         .practice-header h3 {
             margin: 0;
             flex: 1;
         }
-        
+
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -223,136 +242,163 @@ h1, h2, h3, h4 {
             background: var(--gold);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .dropdown {
             opacity: 0;
             transform: translateY(-10px);
             transition: all 0.3s ease;
             pointer-events: none;
         }
-        
+
         .dropdown.active {
             opacity: 1;
             transform: translateY(0);
             pointer-events: all;
         }
-        
+
         .reveal {
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, var(--navy), var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .market-region {
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .market-region:hover {
             fill: var(--gold);
             filter: drop-shadow(0 4px 8px rgb(255, 197, 88));
         }
-        
+
         .floating {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
-        
+
         .pulse-glow {
             animation: pulse-glow 3s ease-in-out infinite;
         }
-        
+
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 214, 138, 0.925); }
-            50% { box-shadow: 0 0 40px rgba(236, 198, 127, 0.753); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 214, 138, 0.925);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(236, 198, 127, 0.753);
+            }
         }
+
         /* FIX: Dropdown should not push navbar down */
-nav .dropdown {
-  position: absolute !important;
-  top: 100%;
-  left: 0;
-  width: 180px;
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        nav .dropdown {
+            position: absolute !important;
+            top: 100%;
+            left: 0;
+            width: 180px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: all 0.25s ease;
-}
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
 
-/* When active, show dropdown without moving layout */
-nav .dropdown.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
+        /* When active, show dropdown without moving layout */
+        nav .dropdown.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
     </style>
 </head>
+
 <body class="font-body text-gray-800 bg-white">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <h1 class="font-display text-2xl font-bold text-gray-900">SkyWorld One</h1>
+                    <img src="WhatsApp Image 2025-11-06 at 1.31.53 PM.jpeg" alt="SkyWorld One Logo" class="h-10 w-auto">
                 </div>
-                
+
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#home" class="nav-link text-gray-900 hover:text-yellow-600 font-medium">Home</a>
-                        <a href="consulting.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
+                        <a href="consulting.html"
+                            class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
                         <div class="relative">
-                            <button id="tradingDropdown" class="nav-link text-gray-700 hover:text-yellow-600 font-medium flex items-center">
-                                
-                                <a href="trading.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
+                            <button id="tradingDropdown"
+                                class="nav-link text-gray-700 hover:text-yellow-600 font-medium flex items-center">
+
+                                <a href="trading.html"
+                                    class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
                                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
-                            <div id="tradingMenu" class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
-                                <a href="tabacco.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco Products</a>
-                                <a href="metal.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals & Coal</a>
+                            <div id="tradingMenu"
+                                class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
+                                <a href="tabacco.html"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco
+                                    Products</a>
+                                <a href="metal.html"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals
+                                    & Coal</a>
                             </div>
                         </div>
-                        <a href="about.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">The Firm</a>
-                        <a href="contact.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Contact</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">The
+                            Firm</a>
+                        <a href="contact.html"
+                            class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Contact</a>
                     </div>
                 </div>
-                
+
                 <div class="md:hidden">
                     <button id="mobileMenuBtn" class="text-gray-700 hover:text-yellow-600">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
             <div class="px-2 pt-2 pb-3 space-y-1">
@@ -370,26 +416,31 @@ nav .dropdown.active {
         <div class="hero-inner">
             <div class="hero-left">
                 <h1>A World of Capability</h1>
-                
+
                 <p class="hero-subheading">
-                    SkyWorld One brings strategy, operational capability, and global trading networks together under one firm.
+                    SkyWorld One brings strategy, operational capability, and global trading networks together under one
+                    firm.
                 </p>
-                
+
                 <p class="hero-body">
-                    Our consulting practice helps leaders shape direction and performance, while our trading operations connect markets with consistency and trust. We enable organizations to move decisively, scale intelligently, and grow sustainably.
+                    Our consulting practice helps leaders shape direction and performance, while our trading operations
+                    connect markets with consistency and trust. We enable organizations to move decisively, scale
+                    intelligently, and grow sustainably.
                 </p>
-                
+
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="contact.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    <a href="contact.html"
+                        class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                         Contact Us
                     </a>
-                   
+
                 </div>
             </div>
-            
+
             <div class="hero-right">
                 <div class="hero-image-card">
-                    <img src="resources\Stock-Connected-Connectivity-Globe-Supply-Chain-Technology-375x214.jpg" alt="Global network" class="hero-globe" />
+                    <img src="resources\Stock-Connected-Connectivity-Globe-Supply-Chain-Technology-375x214.jpg"
+                        alt="Global network" class="hero-globe" />
                 </div>
             </div>
         </div>
@@ -404,86 +455,108 @@ nav .dropdown.active {
                     Two distinct yet complementary divisions serving global markets with clarity, discipline, and trust
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
                 <!-- Consulting Card -->
                 <div class="practice-card bg-white rounded-2xl p-8 shadow-lg reveal">
                     <div class="practice-header">
                         <div class="practice-icon">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                </path>
                             </svg>
                         </div>
                         <h3 class="font-display text-3xl font-bold text-gray-900">Consulting</h3>
                     </div>
                     <p class="text-gray-600 text-lg mb-6">
-                        Strategic advisory and execution support for organizations seeking clarity, capability, and performance improvement.
+                        Strategic advisory and execution support for organizations seeking clarity, capability, and
+                        performance improvement.
                     </p>
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center text-gray-700">
                             <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             Strategic Planning & Direction
                         </div>
                         <div class="flex items-center text-gray-700">
                             <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             Operating Model & Design
                         </div>
                         <div class="flex items-center text-gray-700">
                             <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             Performance & Process Improvement
                         </div>
                     </div>
-                    <a href="consulting.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                        Learn More 
+                    <a href="consulting.html"
+                        class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        Learn More
                         <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
                         </svg>
                     </a>
                 </div>
-                
+
                 <!-- Trading Card -->
                 <div class="practice-card bg-white rounded-2xl p-8 shadow-lg reveal">
                     <div class="practice-header">
                         <div class="practice-icon">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
                             </svg>
                         </div>
                         <h3 class="font-display text-3xl font-bold text-gray-900">Trading</h3>
                     </div>
                     <p class="text-gray-600 text-lg mb-6">
-                        Global supply and distribution of tobacco products, metals, and coal through a trusted international network.
+                        Global supply and distribution of tobacco products, metals, and coal through a trusted
+                        international network.
                     </p>
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center text-gray-700">
                             <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             Tobacco Products
                         </div>
                         <div class="flex items-center text-gray-700">
                             <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             Metals & Coal
                         </div>
                         <div class="flex items-center text-gray-700">
                             <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             Trade Assurance
                         </div>
                     </div>
-                    <a href="trading.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    <a href="trading.html"
+                        class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                         View Trading Divisions
                         <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
                         </svg>
                     </a>
                 </div>
@@ -497,10 +570,11 @@ nav .dropdown.active {
             <div class="text-center mb-16 reveal">
                 <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Across Key Markets</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A global network of partners and suppliers supports our work across the Middle East, Africa, Asia, and Europe
+                    A global network of partners and suppliers supports our work across the Middle East, Africa, Asia,
+                    and Europe
                 </p>
             </div>
-            
+
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="reveal">
                     <div class="bg-gray-50 rounded-2xl p-8">
@@ -537,15 +611,16 @@ nav .dropdown.active {
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="reveal">
                     <div class="relative">
-                        <img src="https://thumbs.dreamstime.com/b/abstract-geometric-network-interconnected-nodes-lines-white-background-showcasing-fine-illustrating-modern-minimal-361749085.jpg" 
-                             alt="Global Business Network" 
-                             class="rounded-2xl shadow-2xl w-full h-96 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent rounded-2xl"></div>
+                        <img src="https://thumbs.dreamstime.com/b/abstract-geometric-network-interconnected-nodes-lines-white-background-showcasing-fine-illustrating-modern-minimal-361749085.jpg"
+                            alt="Global Business Network" class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent rounded-2xl">
+                        </div>
                         <div class="absolute bottom-6 left-6 text-white">
-                            <h4 class="font-display text-xl font-bold mb-2">Executing with Clarity, Discipline, and Trust</h4>
+                            <h4 class="font-display text-xl font-bold mb-2">Executing with Clarity, Discipline, and
+                                Trust</h4>
                             <p class="text-gray-200">Personal and without obligation</p>
                         </div>
                     </div>
@@ -559,41 +634,50 @@ nav .dropdown.active {
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="reveal">
-                    <img src="https://media.istockphoto.com/id/1215119911/photo/looking-directly-up-at-the-skyline-of-the-financial-district-in-central-london-stock-image.jpg?s=612x612&w=0&k=20&c=ZPJgugElAHw-rgXKTid6p5oLwEHhmzqTMu-c4rlMTyw=" 
-                         alt="Executive Office" 
-                         class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+                    <img src="https://media.istockphoto.com/id/1215119911/photo/looking-directly-up-at-the-skyline-of-the-financial-district-in-central-london-stock-image.jpg?s=612x612&w=0&k=20&c=ZPJgugElAHw-rgXKTid6p5oLwEHhmzqTMu-c4rlMTyw="
+                        alt="Executive Office" class="rounded-2xl shadow-2xl w-full h-96 object-cover">
                 </div>
-                
+
                 <div class="reveal">
                     <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">The Firm</h2>
                     <p class="text-xl text-gray-600 mb-8">
-                        SkyWorld One is a diversified company built on the principles of clarity, reliability, and disciplined execution. 
-                        Established to bridge strategic thinking with commercial capability, we serve clients and partners in key global markets.
+                        SkyWorld One is a diversified company built on the principles of clarity, reliability, and
+                        disciplined execution.
+                        Established to bridge strategic thinking with commercial capability, we serve clients and
+                        partners in key global markets.
                     </p>
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center text-gray-700">
                             <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             Integrity over scale
                         </div>
                         <div class="flex items-center text-gray-700">
                             <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             Long-term partnerships
                         </div>
                         <div class="flex items-center text-gray-700">
                             <svg class="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             Measurable results
                         </div>
                     </div>
-                    <a href="about.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    <a href="about.html"
+                        class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                         Learn More About Us
                         <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
                         </svg>
                     </a>
                 </div>
@@ -602,7 +686,7 @@ nav .dropdown.active {
     </section>
 
     <!-- Get in Touch CTA -->
-    
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
@@ -618,8 +702,8 @@ nav .dropdown.active {
                 </div>
                 <div class="border-t border-gray-800 pt-8">
                     <p class="text-gray-500 text-sm">
-                        © 2025 SkyWorld One. All rights reserved. | 
-                        <a href="#" class="hover:text-yellow-600">Privacy Policy</a> | 
+                        © 2026 SkyWorld One. All rights reserved. |
+                        <a href="#" class="hover:text-yellow-600">Privacy Policy</a> |
                         <a href="#" class="hover:text-yellow-600">Compliance</a>
                     </p>
                 </div>
@@ -629,4 +713,5 @@ nav .dropdown.active {
 
     <script src="main.js"></script>
 </body>
+
 </html>

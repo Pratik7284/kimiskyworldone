@@ -1,211 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Firm - SkyWorld One</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
-       
         :root {
-          --navy: #1a2332;
-          --gold: #c9a96e;
-          --charcoal: #2d3748;
-          --light-gray: #f7fafc;
+            --navy: #1a2332;
+            --gold: #c9a96e;
+            --charcoal: #2d3748;
+            --light-gray: #f7fafc;
         }
-      
-        .font-display { font-family: 'Playfair Display', serif; }
-        .font-body { font-family: 'Inter', sans-serif; }
-      
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+
         /* ---------- CONSULTING HERO (compact banner) ---------- */
         .about-hero {
-          position: relative;
-          padding: 100px ;            /* reduced vertical space */
-          max-height: 600px;          /* prevents it growing too tall */
-          overflow: hidden;
-          background:
-            linear-gradient(135deg, rgba(10,12,20,0.54), rgba(20,30,45,0.28)),
-            url('https://static.vecteezy.com/system/resources/thumbnails/048/057/775/small/professional-business-meeting-with-executives-in-formal-suits-corporate-discussion-teamwork-and-leadership-in-a-modern-office-setting-photo.jpg');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          /* background-attachment removed to avoid full-screen behaviour */
-          box-sizing: border-box;
+            position: relative;
+            padding: 100px;
+            /* reduced vertical space */
+            max-height: 600px;
+            /* prevents it growing too tall */
+            overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(10, 12, 20, 0.54), rgba(20, 30, 45, 0.28)),
+                url('https://static.vecteezy.com/system/resources/thumbnails/048/057/775/small/professional-business-meeting-with-executives-in-formal-suits-corporate-discussion-teamwork-and-leadership-in-a-modern-office-setting-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* background-attachment removed to avoid full-screen behaviour */
+            box-sizing: border-box;
         }
-      
+
         /* smaller strict variant toggle with class "force-smaller" if needed */
         .about-hero.force-smaller {
-          max-height: 420px;
-          padding: 44px 0;
+            max-height: 420px;
+            padding: 44px 0;
         }
-      
+
         /* subtle overlay so text remains readable */
         .about-hero::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.35));
-          z-index: 0;
-          pointer-events: none;
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(2, 6, 23, 0.45), rgba(2, 6, 23, 0.35));
+            z-index: 0;
+            pointer-events: none;
         }
-      
+
         /* wrapper */
         .about-hero-inner {
-          position: relative;
-          z-index: 2; /* above overlay */
-          max-width: 1100px;
-          margin: 0 auto;
-          padding: 0 1rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 1px;
+            position: relative;
+            z-index: 2;
+            /* above overlay */
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 1px;
         }
-      
+
         /* compact + responsive text */
         .about-hero-text {
-          max-width: 900px;
-          margin: 0 auto;
-          text-align: center;
-          color: #fff;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
         }
-      
+
         /* Heading - balanced sizes */
         .about-hero-text h1 {
-          font-family: 'Playfair Display', serif;
-          font-weight: 600;
-          font-size: 2.2rem;      /* comfortable base size */
-          line-height: 1.02;
-          margin-bottom: 10px;
-          letter-spacing: -0.02em;
-          color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 2.2rem;
+            /* comfortable base size */
+            line-height: 1.02;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+            color: #ffffff;
         }
-      
+
         /* Slightly larger on wider screens but not overwhelming */
         @media (min-width: 900px) {
-          .about-hero-text h1 { font-size: 2.8rem; }
+            .about-hero-text h1 {
+                font-size: 2.8rem;
+            }
         }
+
         @media (min-width: 1400px) {
-          .about-hero-text h1 { font-size: 3.2rem; }
+            .about-hero-text h1 {
+                font-size: 3.2rem;
+            }
         }
-      
+
         /* Paragraph - readable width & spacing */
         .about-hero-text p {
-          font-family: 'Inter', sans-serif;
-          font-size: 1.02rem;
-          line-height: 1.6;
-          max-width: 760px;
-          margin: 0 auto 18px;
-          color: rgba(255,255,255,0.93);
-          font-weight: 300;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            line-height: 1.6;
+            max-width: 760px;
+            margin: 0 auto 18px;
+            color: rgba(255, 255, 255, 0.93);
+            font-weight: 300;
         }
-      
+
         /* Buttons styles: consistent & balanced */
-        .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .hero-cta {
+            display: inline-flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .hero-cta .btn {
-          display: inline-block;
-          padding: 10px 20px;
-          font-size: 0.95rem;
-          border-radius: 10px;
-          font-weight: 600;
-          text-decoration: none;
-          transition: transform .18s ease, filter .18s ease;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform .18s ease, filter .18s ease;
         }
-      
+
         /* Use same color for both if desired */
-        .btn-primary, .btn-outline {
-          background: var(--gold);
-          color: #111827;
-          border: none;
+        .btn-primary,
+        .btn-outline {
+            background: var(--gold);
+            color: #111827;
+            border: none;
         }
-        .btn-primary:hover, .btn-outline:hover { transform: translateY(-3px); filter: brightness(.95); }
-      
+
+        .btn-primary:hover,
+        .btn-outline:hover {
+            transform: translateY(-3px);
+            filter: brightness(.95);
+        }
+
         /* If you prefer second button as outline, comment above and uncomment below:
         .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.16); }
         .btn-outline:hover { background: rgba(255,255,255,0.06); color: #fff; }
         */
-      
+
         /* ---------- Other existing styles (kept / tuned) ---------- */
         .service-card {
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          transform-style: preserve-3d;
-        }
-        .service-card:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-      
-        .nav-link { position: relative; transition: color 0.3s ease; }
-        .nav-link::after {
-          content: '';
-          position: absolute;
-          bottom: -4px;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background: var(--gold);
-          transition: width 0.3s ease;
-        }
-        .nav-link:hover::after { width: 100%; }
-      
-        .dropdown {
-          opacity: 0;
-          transform: translateY(-10px);
-          transition: all 0.3s ease;
-          pointer-events: none;
-        }
-        .dropdown.active { opacity: 1; transform: translateY(0); pointer-events: all; }
-      
-        .reveal { opacity: 0; transform: translateY(30px); }
-        .reveal.active { opacity: 1; transform: translateY(0); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-      
-        .process-step { position: relative; }
-        .process-step::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: -2rem;
-          width: 2rem;
-          height: 2px;
-          background: var(--gold);
-          transform: translateY(-50%);
-        }
-        .process-step:last-child::before { display: none; }
-      
-        .gradient-text {
-          background: linear-gradient(135deg, var(--navy), var(--gold));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-      
-        /* ---------- Responsive tweaks ---------- */
-        @media (max-width: 900px) {
-          .about-hero { padding: 34px 0; max-height: none; }
-          .about-hero-text h1 { font-size: 1.8rem; }
-          .about-hero-text p { font-size: 0.95rem; line-height: 1.45; max-width: 100%; padding: 0 8px; }
-          .hero-cta .btn { padding: 8px 14px; font-size: 0.9rem; }
-        }
-      
-    
-        
-        .value-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transform-style: preserve-3d;
         }
-        
-        .value-card:hover {
+
+        .service-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        
+
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -216,39 +181,145 @@
             background: var(--gold);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .dropdown {
             opacity: 0;
             transform: translateY(-10px);
             transition: all 0.3s ease;
             pointer-events: none;
         }
-        
+
         .dropdown.active {
             opacity: 1;
             transform: translateY(0);
             pointer-events: all;
         }
-        
+
         .reveal {
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
+        .process-step {
+            position: relative;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -2rem;
+            width: 2rem;
+            height: 2px;
+            background: var(--gold);
+            transform: translateY(-50%);
+        }
+
+        .process-step:last-child::before {
+            display: none;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--navy), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ---------- Responsive tweaks ---------- */
+        @media (max-width: 900px) {
+            .about-hero {
+                padding: 34px 0;
+                max-height: none;
+            }
+
+            .about-hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .about-hero-text p {
+                font-size: 0.95rem;
+                line-height: 1.45;
+                max-width: 100%;
+                padding: 0 8px;
+            }
+
+            .hero-cta .btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+
+
+
+        .value-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .dropdown.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .timeline-item {
             position: relative;
         }
-        
+
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -258,87 +329,102 @@
             height: 100%;
             background: var(--gold);
         }
-        
+
         .timeline-item:last-child::before {
             display: none;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, var(--navy), var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .counter {
             font-size: 3rem;
             font-weight: bold;
             color: var(--gold);
         }
+
         nav .dropdown {
-  position: absolute !important;
-  top: 100%;
-  left: 0;
-  width: 180px;
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: absolute !important;
+            top: 100%;
+            left: 0;
+            width: 180px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: all 0.25s ease;
-}
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
 
-/* When active, show dropdown without moving layout */
-nav .dropdown.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+        /* When active, show dropdown without moving layout */
+        nav .dropdown.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
     </style>
 </head>
+
 <body class="font-body text-gray-800 bg-white">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <a href="index.html" class="font-display text-2xl font-bold text-gray-900">SkyWorld One</a>
+                    <a href="index.html" class="font-display text-2xl font-bold text-gray-900"></a>
+                    <img src="WhatsApp Image 2025-11-06 at 1.31.53 PM.jpeg" alt="SkyWorld One Logo" class="h-10 w-auto">
                 </div>
-                
+
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="index.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Home</a>
-                        <a href="consulting.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
+                        <a href="consulting.html"
+                            class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
                         <div class="relative">
-                            <button id="tradingDropdown" class="nav-link text-gray-700 hover:text-yellow-600 font-medium flex items-center">
-                                <a href="trading.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
+                            <button id="tradingDropdown"
+                                class="nav-link text-gray-700 hover:text-yellow-600 font-medium flex items-center">
+                                <a href="trading.html"
+                                    class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
                                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
-                            <div id="tradingMenu" class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
-                                <a href="tabacco.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco Products</a>
-                                <a href="metal.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals & Coal</a>
+                            <div id="tradingMenu"
+                                class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
+                                <a href="tabacco.html"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco
+                                    Products</a>
+                                <a href="metal.html"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals
+                                    & Coal</a>
                             </div>
                         </div>
-                        <a href="about.html" class="nav-link text-gray-900 hover:text-yellow-600 font-medium">The Firm</a>
-                        <a href="contact.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Contact</a>
+                        <a href="about.html" class="nav-link text-gray-900 hover:text-yellow-600 font-medium">The
+                            Firm</a>
+                        <a href="contact.html"
+                            class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Contact</a>
                     </div>
                 </div>
-                
+
                 <div class="md:hidden">
                     <button id="mobileMenuBtn" class="text-gray-700 hover:text-yellow-600">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
             <div class="px-2 pt-2 pb-3 space-y-1">
@@ -360,8 +446,10 @@ nav .dropdown.active {
                     The Firm
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto font-light">
-                    SkyWorld One is a diversified company built on the principles of clarity, reliability, and disciplined execution. 
-                    Established to bridge strategic thinking with commercial capability, we serve clients and partners in key global markets.
+                    SkyWorld One is a diversified company built on the principles of clarity, reliability, and
+                    disciplined execution.
+                    Established to bridge strategic thinking with commercial capability, we serve clients and partners
+                    in key global markets.
                 </p>
             </div>
         </div>
@@ -375,24 +463,26 @@ nav .dropdown.active {
                     <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-8">Company Overview</h2>
                     <div class="space-y-6 text-lg text-gray-600">
                         <p>
-                            SkyWorld One combines analytical depth with pragmatic delivery. We value integrity over scale, 
+                            SkyWorld One combines analytical depth with pragmatic delivery. We value integrity over
+                            scale,
                             long-term partnerships over short-term activity, and measurable results over visibility.
                         </p>
                         <p>
-                            The firm continues to grow through relationships built on trust, transparency, and professional conduct. 
+                            The firm continues to grow through relationships built on trust, transparency, and
+                            professional conduct.
                             Our approach is grounded in diligence, operational discipline, and discretion.
                         </p>
                         <p>
-                            Together, our consulting and trading practices reflect a single objective: to enable organizations 
+                            Together, our consulting and trading practices reflect a single objective: to enable
+                            organizations
                             and counterparties to operate with focus, confidence, and precision.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="reveal">
-                    <img src="https://thumbs.dreamstime.com/b/business-professionals-brainstorming-modern-office-panoramic-cityscape-view-night-cool-tones-soft-interior-lighting-402111250.jpg" 
-                         alt="Executive Office" 
-                         class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+                    <img src="https://thumbs.dreamstime.com/b/business-professionals-brainstorming-modern-office-panoramic-cityscape-view-night-cool-tones-soft-interior-lighting-402111250.jpg"
+                        alt="Executive Office" class="rounded-2xl shadow-2xl w-full h-96 object-cover">
                 </div>
             </div>
         </div>
@@ -407,12 +497,13 @@ nav .dropdown.active {
                     The principles that guide our approach to every engagement and transaction
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="value-card bg-white rounded-2xl p-8 shadow-lg text-center reveal">
                     <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
                     <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Clarity</h3>
@@ -420,11 +511,13 @@ nav .dropdown.active {
                         Clear communication, transparent processes, and unambiguous expectations in every interaction
                     </p>
                 </div>
-                
+
                 <div class="value-card bg-white rounded-2xl p-8 shadow-lg text-center reveal">
                     <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                            </path>
                         </svg>
                     </div>
                     <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Reliability</h3>
@@ -432,11 +525,12 @@ nav .dropdown.active {
                         Consistent delivery, dependable partnerships, and proven track record across all practices
                     </p>
                 </div>
-                
+
                 <div class="value-card bg-white rounded-2xl p-8 shadow-lg text-center reveal">
                     <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
                     <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Discipline</h3>
@@ -457,14 +551,15 @@ nav .dropdown.active {
                     Global reach with local expertise across key international markets
                 </p>
             </div>
-            
+
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="reveal">
                     <div class="space-y-8">
                         <div class="timeline-item pl-8">
                             <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Consulting Practice</h3>
                             <p class="text-gray-600 text-lg mb-4">
-                                Strategic advisory and execution support for organizations seeking clarity, capability, and performance improvement.
+                                Strategic advisory and execution support for organizations seeking clarity, capability,
+                                and performance improvement.
                             </p>
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="text-center p-4 bg-gray-50 rounded-lg">
@@ -477,11 +572,12 @@ nav .dropdown.active {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="timeline-item pl-8">
                             <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Trading Division</h3>
                             <p class="text-gray-600 text-lg mb-4">
-                                Global supply and distribution through trusted international networks with operational discipline.
+                                Global supply and distribution through trusted international networks with operational
+                                discipline.
                             </p>
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="text-center p-4 bg-gray-50 rounded-lg">
@@ -496,7 +592,7 @@ nav .dropdown.active {
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="reveal">
                     <div class="bg-gray-50 rounded-2xl p-8">
                         <h3 class="font-display text-2xl font-bold text-gray-900 mb-6">Global Presence</h3>
@@ -543,31 +639,39 @@ nav .dropdown.active {
                 <div class="bg-white rounded-2xl p-12 shadow-lg">
                     <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-8">Our Mission</h2>
                     <blockquote class="text-2xl md:text-3xl font-light text-gray-600 italic mb-8">
-                        "To enable organizations and counterparties to operate with focus, confidence, and precision through strategic clarity and commercial capability."
+                        "To enable organizations and counterparties to operate with focus, confidence, and precision
+                        through strategic clarity and commercial capability."
                     </blockquote>
                     <div class="grid md:grid-cols-3 gap-8 mt-12">
                         <div class="text-center">
-                            <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <div
+                                class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
                                 </svg>
                             </div>
                             <h3 class="font-semibold text-gray-900 mb-2">Global Reach</h3>
                             <p class="text-gray-600 text-sm">International presence with local expertise</p>
                         </div>
                         <div class="text-center">
-                            <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <div
+                                class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
                             </div>
                             <h3 class="font-semibold text-gray-900 mb-2">Professional Excellence</h3>
                             <p class="text-gray-600 text-sm">High standards in every engagement</p>
                         </div>
                         <div class="text-center">
-                            <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <div
+                                class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
                                 </svg>
                             </div>
                             <h3 class="font-semibold text-gray-900 mb-2">Trusted Partnerships</h3>
@@ -580,7 +684,7 @@ nav .dropdown.active {
     </section>
 
     <!-- Get in Touch -->
-   
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
@@ -597,8 +701,8 @@ nav .dropdown.active {
                 </div>
                 <div class="border-t border-gray-800 pt-8">
                     <p class="text-gray-500 text-sm">
-                        © 2024 SkyWorld One. All rights reserved. | 
-                        <a href="#" class="hover:text-yellow-600">Privacy Policy</a> | 
+                        © 2026 SkyWorld One. All rights reserved. |
+                        <a href="#" class="hover:text-yellow-600">Privacy Policy</a> |
                         <a href="#" class="hover:text-yellow-600">Compliance</a>
                     </p>
                 </div>
@@ -616,7 +720,7 @@ nav .dropdown.active {
                 const duration = 2000;
                 const increment = target / (duration / 16);
                 let current = 0;
-                
+
                 const timer = setInterval(() => {
                     current += increment;
                     if (current >= target) {
@@ -628,7 +732,7 @@ nav .dropdown.active {
                 }, 16);
             });
         }
-        
+
         // Initialize counter animation when section is visible
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -638,7 +742,7 @@ nav .dropdown.active {
                 }
             });
         });
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             const operationsSection = document.querySelector('.counter').closest('section');
             if (operationsSection) {
@@ -647,4 +751,5 @@ nav .dropdown.active {
         });
     </script>
 </body>
+
 </html>

@@ -1,200 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - SkyWorld One</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-         :root {
-          --navy: #1a2332;
-          --gold: #c9a96e;
-          --charcoal: #2d3748;
-          --light-gray: #f7fafc;
+    <style>
+        :root {
+            --navy: #1a2332;
+            --gold: #c9a96e;
+            --charcoal: #2d3748;
+            --light-gray: #f7fafc;
         }
-      
-        .font-display { font-family: 'Playfair Display', serif; }
-        .font-body { font-family: 'Inter', sans-serif; }
-      
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+
         /* ---------- CONSULTING HERO (compact banner) ---------- */
         .contact-hero {
-          position: relative;
-          padding: 120px ;            /* reduced vertical space */
-          max-height: 600px;          /* prevents it growing too tall */
-          overflow: hidden;
-          background:
-            linear-gradient(135deg, rgba(10,12,20,0.54), rgba(20,30,45,0.28)),
-            url('https://www.shutterstock.com/image-photo/multinational-business-people-shaking-hands-600nw-2480478281.jpg');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          /* background-attachment removed to avoid full-screen behaviour */
-          box-sizing: border-box;
+            position: relative;
+            padding: 120px;
+            /* reduced vertical space */
+            max-height: 600px;
+            /* prevents it growing too tall */
+            overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(10, 12, 20, 0.54), rgba(20, 30, 45, 0.28)),
+                url('https://www.shutterstock.com/image-photo/multinational-business-people-shaking-hands-600nw-2480478281.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* background-attachment removed to avoid full-screen behaviour */
+            box-sizing: border-box;
         }
-      
+
         /* smaller strict variant toggle with class "force-smaller" if needed */
         .contact-hero.force-smaller {
-          max-height: 420px;
-          padding: 44px 0;
+            max-height: 420px;
+            padding: 44px 0;
         }
-      
+
         /* subtle overlay so text remains readable */
         .contact-hero::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.35));
-          z-index: 0;
-          pointer-events: none;
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(2, 6, 23, 0.45), rgba(2, 6, 23, 0.35));
+            z-index: 0;
+            pointer-events: none;
         }
-      
+
         /* wrapper */
         .contact-hero-inner {
-          position: relative;
-          z-index: 2; /* above overlay */
-          max-width: 1100px;
-          margin: 0 auto;
-          padding: 0 1rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 1px;
+            position: relative;
+            z-index: 2;
+            /* above overlay */
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 1px;
         }
-      
+
         /* compact + responsive text */
         .contact-hero-text {
-          max-width: 900px;
-          margin: 0 auto;
-          text-align: center;
-          color: #fff;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
         }
-      
+
         /* Heading - balanced sizes */
         .contact-hero-text h1 {
-          font-family: 'Playfair Display', serif;
-          font-weight: 600;
-          font-size: 2.2rem;      /* comfortable base size */
-          line-height: 1.02;
-          margin-bottom: 10px;
-          letter-spacing: -0.02em;
-          color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 2.2rem;
+            /* comfortable base size */
+            line-height: 1.02;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+            color: #ffffff;
         }
-      
+
         /* Slightly larger on wider screens but not overwhelming */
         @media (min-width: 900px) {
-          .contact-hero-text h1 { font-size: 2.8rem; }
+            .contact-hero-text h1 {
+                font-size: 2.8rem;
+            }
         }
+
         @media (min-width: 1400px) {
-          .contact-hero-text h1 { font-size: 3.2rem; }
+            .contact-hero-text h1 {
+                font-size: 3.2rem;
+            }
         }
-      
+
         /* Paragraph - readable width & spacing */
         .contact-hero-text p {
-          font-family: 'Inter', sans-serif;
-          font-size: 1.02rem;
-          line-height: 1.6;
-          max-width: 760px;
-          margin: 0 auto 18px;
-          color: rgba(255,255,255,0.93);
-          font-weight: 300;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            line-height: 1.6;
+            max-width: 760px;
+            margin: 0 auto 18px;
+            color: rgba(255, 255, 255, 0.93);
+            font-weight: 300;
         }
-      
+
         /* Buttons styles: consistent & balanced */
-        .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .hero-cta {
+            display: inline-flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .hero-cta .btn {
-          display: inline-block;
-          padding: 10px 20px;
-          font-size: 0.95rem;
-          border-radius: 10px;
-          font-weight: 600;
-          text-decoration: none;
-          transition: transform .18s ease, filter .18s ease;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform .18s ease, filter .18s ease;
         }
-      
+
         /* Use same color for both if desired */
-        .btn-primary, .btn-outline {
-          background: var(--gold);
-          color: #111827;
-          border: none;
+        .btn-primary,
+        .btn-outline {
+            background: var(--gold);
+            color: #111827;
+            border: none;
         }
-        .btn-primary:hover, .btn-outline:hover { transform: translateY(-3px); filter: brightness(.95); }
-      
+
+        .btn-primary:hover,
+        .btn-outline:hover {
+            transform: translateY(-3px);
+            filter: brightness(.95);
+        }
+
         /* If you prefer second button as outline, comment above and uncomment below:
         .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.16); }
         .btn-outline:hover { background: rgba(255,255,255,0.06); color: #fff; }
         */
-      
+
         /* ---------- Other existing styles (kept / tuned) ---------- */
         .service-card {
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          transform-style: preserve-3d;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
         }
+
         .service-card:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-      
-        .nav-link { position: relative; transition: color 0.3s ease; }
-        .nav-link::after {
-          content: '';
-          position: absolute;
-          bottom: -4px;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background: var(--gold);
-          transition: width 0.3s ease;
-        }
-        .nav-link:hover::after { width: 100%; }
-      
-        .dropdown {
-          opacity: 0;
-          transform: translateY(-10px);
-          transition: all 0.3s ease;
-          pointer-events: none;
-        }
-        .dropdown.active { opacity: 1; transform: translateY(0); pointer-events: all; }
-      
-        .reveal { opacity: 0; transform: translateY(30px); }
-        .reveal.active { opacity: 1; transform: translateY(0); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-      
-        .process-step { position: relative; }
-        .process-step::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: -2rem;
-          width: 2rem;
-          height: 2px;
-          background: var(--gold);
-          transform: translateY(-50%);
-        }
-        .process-step:last-child::before { display: none; }
-      
-        .gradient-text {
-          background: linear-gradient(135deg, var(--navy), var(--gold));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-      
-        /* ---------- Responsive tweaks ---------- */
-        @media (max-width: 900px) {
-          .contact-hero { padding: 34px 0; max-height: none; }
-          .contact-hero-text h1 { font-size: 1.8rem; }
-          .contact-hero-text p { font-size: 0.95rem; line-height: 1.45; max-width: 100%; padding: 0 8px; }
-          .hero-cta .btn { padding: 8px 14px; font-size: 0.9rem; }
-        }
-        
+
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -205,126 +182,235 @@
             background: var(--gold);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .dropdown {
             opacity: 0;
             transform: translateY(-10px);
             transition: all 0.3s ease;
             pointer-events: none;
         }
-        
+
         .dropdown.active {
             opacity: 1;
             transform: translateY(0);
             pointer-events: all;
         }
-        
+
         .reveal {
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
+        .process-step {
+            position: relative;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -2rem;
+            width: 2rem;
+            height: 2px;
+            background: var(--gold);
+            transform: translateY(-50%);
+        }
+
+        .process-step:last-child::before {
+            display: none;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--navy), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ---------- Responsive tweaks ---------- */
+        @media (max-width: 900px) {
+            .contact-hero {
+                padding: 34px 0;
+                max-height: none;
+            }
+
+            .contact-hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-hero-text p {
+                font-size: 0.95rem;
+                line-height: 1.45;
+                max-width: 100%;
+                padding: 0 8px;
+            }
+
+            .hero-cta .btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .dropdown.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .form-input {
             transition: all 0.3s ease;
         }
-        
+
         .form-input:focus {
             border-color: var(--gold);
             box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.1);
         }
-        
+
         .form-input.error {
             border-color: #ef4444;
             box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
         }
-        
+
         .form-input.success {
             border-color: #10b981;
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
-        
+
         .contact-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .contact-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
         }
+
         nav .dropdown {
-  position: absolute !important;
-  top: 100%;
-  left: 0;
-  width: 180px;
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: absolute !important;
+            top: 100%;
+            left: 0;
+            width: 180px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: all 0.25s ease;
-}
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
 
-/* When active, show dropdown without moving layout */
-nav .dropdown.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+        /* When active, show dropdown without moving layout */
+        nav .dropdown.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
     </style>
 </head>
+
 <body class="font-body text-gray-800 bg-white">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <a href="index.html" class="font-display text-2xl font-bold text-gray-900">SkyWorld One</a>
+                    <a href="index.html" class="font-display text-2xl font-bold text-gray-900"></a>
+                    <img src="WhatsApp Image 2025-11-06 at 1.31.53 PM.jpeg" alt="SkyWorld One Logo" class="h-10 w-auto">
                 </div>
-                
+
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="index.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Home</a>
-                        <a href="consulting.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
+                        <a href="consulting.html"
+                            class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Consulting</a>
                         <div class="relative">
-                            <button id="tradingDropdown" class="nav-link text-gray-700 hover:text-yellow-600 font-medium flex items-center">
-                                <a href="trading.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
+                            <button id="tradingDropdown"
+                                class="nav-link text-gray-700 hover:text-yellow-600 font-medium flex items-center">
+                                <a href="trading.html"
+                                    class="nav-link text-gray-700 hover:text-yellow-600 font-medium">Trading</a>
                                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
-                            <div id="tradingMenu" class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
-                                <a href="tabacco.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco Products</a>
-                                <a href="metal.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals & Coal</a>
+                            <div id="tradingMenu"
+                                class="dropdown absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
+                                <a href="tabacco.html"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Tobacco
+                                    Products</a>
+                                <a href="metal.html"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-yellow-600">Metals
+                                    & Coal</a>
                             </div>
                         </div>
-                        <a href="about.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">The Firm</a>
-                        <a href="contact.html" class="nav-link text-gray-900 hover:text-yellow-600 font-medium">Contact</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium">The
+                            Firm</a>
+                        <a href="contact.html"
+                            class="nav-link text-gray-900 hover:text-yellow-600 font-medium">Contact</a>
                     </div>
                 </div>
-                
+
                 <div class="md:hidden">
                     <button id="mobileMenuBtn" class="text-gray-700 hover:text-yellow-600">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
             <div class="px-2 pt-2 pb-3 space-y-1">
@@ -346,15 +432,16 @@ nav .dropdown.active {
                     Get in Touch
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto font-light">
-                    Personal and without obligation – we welcome direct enquiries to discuss how SkyWorld One can support your objectives
+                    Personal and without obligation – we welcome direct enquiries to discuss how SkyWorld One can
+                    support your objectives
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Contact Overview -->
-    
-               
+
+
 
     <!-- Contact Form -->
     <section class="py-20 bg-gray-50">
@@ -365,7 +452,7 @@ nav .dropdown.active {
                     Please provide your details and we'll respond within 24 hours
                 </p>
             </div>
-            
+
             <div class="form-container bg-white rounded-2xl p-8 shadow-lg reveal">
                 <form id="contactForm" action="https://formspree.io/f/xnnlqyda" method="POST" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
@@ -373,57 +460,39 @@ nav .dropdown.active {
                             <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
                                 Full Name *
                             </label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                required
+                            <input type="text" id="name" name="name" required
                                 class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
-                                placeholder="Your full name"
-                            >
+                                placeholder="Your full name">
                             <div class="error-message text-red-600 text-sm mt-1 hidden" id="nameError"></div>
                         </div>
-                        
+
                         <div>
                             <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
                                 Email Address *
                             </label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                required
+                            <input type="email" id="email" name="email" required
                                 class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
-                                placeholder="your.email@company.com"
-                            >
+                                placeholder="your.email@company.com">
                             <div class="error-message text-red-600 text-sm mt-1 hidden" id="emailError"></div>
                         </div>
                     </div>
-                    
+
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="company" class="block text-sm font-semibold text-gray-700 mb-2">
                                 Company/Organization
                             </label>
-                            <input 
-                                type="text" 
-                                id="company" 
-                                name="company"
+                            <input type="text" id="company" name="company"
                                 class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
-                                placeholder="Your company name"
-                            >
+                                placeholder="Your company name">
                         </div>
-                        
+
                         <div>
                             <label for="inquiryType" class="block text-sm font-semibold text-gray-700 mb-2">
                                 Inquiry Type *
                             </label>
-                            <select 
-                                id="inquiryType" 
-                                name="inquiryType" 
-                                required
-                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
-                            >
+                            <select id="inquiryType" name="inquiryType" required
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
                                 <option value="">Select inquiry type</option>
                                 <option value="consulting">Management Consulting</option>
                                 <option value="trading-tobacco">Trading - Tobacco Products</option>
@@ -434,62 +503,59 @@ nav .dropdown.active {
                             <div class="error-message text-red-600 text-sm mt-1 hidden" id="inquiryTypeError"></div>
                         </div>
                     </div>
-                    
+
                     <div>
                         <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
                             Phone Number
                         </label>
-                        <input 
-                            type="tel" 
-                            id="phone" 
-                            name="phone"
+                        <input type="tel" id="phone" name="phone"
                             class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
-                            placeholder="+1 (555) 123-4567"
-                        >
+                            placeholder="+1 (555) 123-4567">
                     </div>
-                    
+
                     <div>
                         <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
                             Message *
                         </label>
-                        <textarea 
-                            id="message" 
-                            name="message" 
-                            rows="6" 
-                            required
+                        <textarea id="message" name="message" rows="6" required
                             class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none resize-none"
-                            placeholder="Please describe your requirements, objectives, or questions in detail..."
-                        ></textarea>
+                            placeholder="Please describe your requirements, objectives, or questions in detail..."></textarea>
                         <div class="error-message text-red-600 text-sm mt-1 hidden" id="messageError"></div>
                     </div>
-                    
+
                     <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                         <div class="flex items-start">
-                            <svg class="w-5 h-5 text-yellow-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                            <svg class="w-5 h-5 text-yellow-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                             <div>
                                 <h4 class="font-semibold text-yellow-800 mb-1">Privacy & Confidentiality</h4>
                                 <p class="text-yellow-700 text-sm">
-                                    All information provided will be handled with complete discretion and in accordance with our privacy policy. 
+                                    All information provided will be handled with complete discretion and in accordance
+                                    with our privacy policy.
                                     We do not share client information with third parties.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div id="formErrors" class="hidden"></div>
-                    
+
                     <div class="text-center">
-                        <button 
-                            type="submit" 
-                            class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-yellow-200"
-                        >
+                        <button type="submit"
+                            class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-yellow-200">
                             <span class="submit-text">Send Enquiry</span>
                             <span class="loading-text hidden">
-                                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
                                 </svg>
                                 Sending...
                             </span>
@@ -509,7 +575,7 @@ nav .dropdown.active {
                     <div>
                         <h4 class="font-semibold text-gray-900 mb-3">Regulatory Compliance</h4>
                         <p class="text-gray-600 text-sm mb-4">
-                            SkyWorld One operates in full compliance with international trade regulations, 
+                            SkyWorld One operates in full compliance with international trade regulations,
                             anti-money laundering requirements, and local business laws in all jurisdictions.
                         </p>
                         <ul class="text-gray-600 text-sm space-y-1">
@@ -519,11 +585,11 @@ nav .dropdown.active {
                             <li>• Export control compliance</li>
                         </ul>
                     </div>
-                    
+
                     <div>
                         <h4 class="font-semibold text-gray-900 mb-3">Data Protection</h4>
                         <p class="text-gray-600 text-sm mb-4">
-                            We maintain strict data protection standards and handle all client information 
+                            We maintain strict data protection standards and handle all client information
                             in accordance with applicable privacy laws and regulations.
                         </p>
                         <ul class="text-gray-600 text-sm space-y-1">
@@ -534,10 +600,10 @@ nav .dropdown.active {
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="mt-8 pt-6 border-t border-gray-200 text-center">
                     <p class="text-gray-600 text-sm">
-                        <strong>Disclaimer:</strong> This website is for informational purposes only. 
+                        <strong>Disclaimer:</strong> This website is for informational purposes only.
                         All business relationships are subject to formal agreements and compliance verification.
                     </p>
                 </div>
@@ -546,7 +612,7 @@ nav .dropdown.active {
     </section>
 
     <!-- CTA Section -->
-  
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
@@ -563,8 +629,8 @@ nav .dropdown.active {
                 </div>
                 <div class="border-t border-gray-800 pt-8">
                     <p class="text-gray-500 text-sm">
-                        © 2024 SkyWorld One. All rights reserved. | 
-                        <a href="#" class="hover:text-yellow-600">Privacy Policy</a> | 
+                        © 2026 SkyWorld One. All rights reserved. |
+                        <a href="#" class="hover:text-yellow-600">Privacy Policy</a> |
                         <a href="#" class="hover:text-yellow-600">Compliance</a>
                     </p>
                 </div>
@@ -575,25 +641,25 @@ nav .dropdown.active {
     <script src="main.js"></script>
     <script>
         // Contact form specific functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const contactForm = document.getElementById('contactForm');
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const submitText = submitBtn.querySelector('.submit-text');
             const loadingText = submitBtn.querySelector('.loading-text');
             const formErrors = document.getElementById('formErrors');
             const formContainer = document.querySelector('.form-container');
-            
+
             // Real-time validation
             const inputs = contactForm.querySelectorAll('input, select, textarea');
             inputs.forEach(input => {
                 input.addEventListener('blur', () => validateField(input));
                 input.addEventListener('input', () => clearFieldError(input));
             });
-            
+
             // Form submission
-            contactForm.addEventListener('submit', function(e) {
+            contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 if (!validateForm()) {
                     return;
                 }
@@ -609,41 +675,41 @@ nav .dropdown.active {
                     },
                     body: formData
                 })
-                .then(async response => {
-                    hideLoading();
+                    .then(async response => {
+                        hideLoading();
 
-                    if (response.ok) {
-                        contactForm.reset();
-                        showSuccess();
-                    } else {
-                        const data = await response.json().catch(() => null);
-                        if (data && data.errors && data.errors.length) {
-                            throw new Error(data.errors.map(err => err.message).join(', '));
+                        if (response.ok) {
+                            contactForm.reset();
+                            showSuccess();
+                        } else {
+                            const data = await response.json().catch(() => null);
+                            if (data && data.errors && data.errors.length) {
+                                throw new Error(data.errors.map(err => err.message).join(', '));
+                            }
+                            throw new Error('There was a problem sending your message. Please try again.');
                         }
-                        throw new Error('There was a problem sending your message. Please try again.');
-                    }
-                })
-                .catch(error => {
-                    hideLoading();
-                    showError(error.message || 'Unable to submit form at this time. Please try again later.');
-                });
+                    })
+                    .catch(error => {
+                        hideLoading();
+                        showError(error.message || 'Unable to submit form at this time. Please try again later.');
+                    });
             });
-            
+
             function validateField(field) {
                 const fieldName = field.name;
                 const value = field.value.trim();
                 let isValid = true;
                 let errorMessage = '';
-                
+
                 // Clear previous state
                 field.classList.remove('error', 'success');
-                
+
                 // Required field validation
                 if (field.required && !value) {
                     isValid = false;
                     errorMessage = `${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)} is required`;
                 }
-                
+
                 // Email validation
                 if (fieldName === 'email' && value) {
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -652,19 +718,19 @@ nav .dropdown.active {
                         errorMessage = 'Please enter a valid email address';
                     }
                 }
-                
+
                 // Name validation (minimum length)
                 if (fieldName === 'name' && value && value.length < 2) {
                     isValid = false;
                     errorMessage = 'Name must be at least 2 characters';
                 }
-                
+
                 // Message validation (minimum length)
                 if (fieldName === 'message' && value && value.length < 10) {
                     isValid = false;
                     errorMessage = 'Message must be at least 10 characters';
                 }
-                
+
                 // Apply validation state
                 if (value) {
                     if (isValid) {
@@ -673,7 +739,7 @@ nav .dropdown.active {
                         field.classList.add('error');
                     }
                 }
-                
+
                 // Show error message
                 const errorElement = document.getElementById(fieldName + 'Error');
                 if (errorElement) {
@@ -684,10 +750,10 @@ nav .dropdown.active {
                         errorElement.classList.add('hidden');
                     }
                 }
-                
+
                 return isValid;
             }
-            
+
             function clearFieldError(field) {
                 const errorElement = document.getElementById(field.name + 'Error');
                 if (errorElement) {
@@ -695,28 +761,28 @@ nav .dropdown.active {
                 }
                 field.classList.remove('error');
             }
-            
+
             function validateForm() {
                 let isValid = true;
                 const formData = new FormData(contactForm);
-                
+
                 // Validate all required fields
                 inputs.forEach(input => {
                     if (!validateField(input)) {
                         isValid = false;
                     }
                 });
-                
+
                 return isValid;
             }
-            
+
             function showLoading() {
                 submitBtn.disabled = true;
                 submitText.classList.add('hidden');
                 loadingText.classList.remove('hidden');
                 clearFormError();
             }
-            
+
             function hideLoading() {
                 submitBtn.disabled = false;
                 submitText.classList.remove('hidden');
@@ -771,4 +837,5 @@ nav .dropdown.active {
         });
     </script>
 </body>
+
 </html>
